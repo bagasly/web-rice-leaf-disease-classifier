@@ -6,22 +6,22 @@ import numpy as np
 # Fungsi untuk memuat model yang dipilih
 @st.cache_resource
 def load_model(model_choice):
-    if model_choice == "## Model Baseline":
+    if model_choice == "Model Baseline":
         return tf.keras.models.load_model("model/model_baseline.h5", compile=False)
-    elif model_choice == "## Model Terbaik":
+    elif model_choice == "Model Terbaik":
         return tf.keras.models.load_model("model/model_terbaik.h5", compile=False)
 
 # Pilihan model untuk digunakan
 model_choice = st.radio(
-    "### Pilih Model yang Ingin Digunakan:",
-    ("## Model Baseline", "## Model Terbaik")
+    "Pilih Model yang Ingin Digunakan:",
+    ("Model Baseline", "Model Terbaik")
 )
 
 # Memuat model sesuai pilihan
 model = load_model(model_choice)
 
 # Menampilkan informasi model yang dipilih
-st.write(f"### Model yang dipilih: {model_choice}")
+st.write(f"Model yang dipilih: {model_choice}")
 
 # Memuat model sesuai pilihan
 model = load_model(model_choice)
