@@ -3,8 +3,11 @@ from PIL import Image
 import tensorflow as tf
 import numpy as np
 
-# Load model
-model = tf.keras.models.load_model('model/model.h5')
+@st.cache_resource
+def load_model_cached():
+    return tf.keras.models.load_model("model/model.h5", compile=False)
+
+model = load_model_cached()
 labels = ['Bacterial Blight', 'Blast', 'Brown Spot', 'Tungro']
 
 # Preprocess image function
