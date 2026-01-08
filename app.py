@@ -64,10 +64,10 @@ if uploaded_file is not None:
     confidence = round(preds[pred_index] * 100, 2)
 
     # Display prediction result
-    st.write(f"Prediction: {prediction}")
-    st.write(f"Confidence: {confidence}%")
+    st.write(f"Prediksi: {prediction}")
+    st.write(f"Tingkat Keyakinan: {confidence}%")
 
     # Display prevention and treatment info
     treatment_info = get_treatment_info(prediction)
-    st.subheader("Prevention and Treatment")
+    st.subheader("Pencegahan dan Pengobatan")
     st.markdown(treatment_info)
