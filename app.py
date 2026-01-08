@@ -14,14 +14,14 @@ def load_model(model_choice):
 # Pilihan model untuk digunakan
 model_choice = st.radio(
     "### Pilih Model yang Ingin Digunakan:",
-    ("Model Baseline", "Model Terbaik")
+    ("## Model Baseline", "## Model Terbaik")
 )
 
 # Memuat model sesuai pilihan
 model = load_model(model_choice)
 
 # Menampilkan informasi model yang dipilih
-st.write(f"## Model yang dipilih: {model_choice}")
+st.write(f"### Model yang dipilih: {model_choice}")
 
 # Memuat model sesuai pilihan
 model = load_model(model_choice)
